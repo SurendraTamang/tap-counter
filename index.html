@@ -3,7 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tap Counter</title>
+  <title>Tap Counter - Free Online Click Counter Tool</title>
+  <meta name="description" content="Simple, free online tap counter. Count clicks and taps instantly on any device. Mobile-friendly, no ads, no sign-up required.">
+  <meta name="keywords" content="tap counter, click counter, tally counter, online counter, count clicks, free counter tool">
+  <meta name="author" content="Surendra Tamang">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://surendratamang.github.io/tap-counter/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tap Counter - Free Online Click Counter Tool">
+  <meta property="og:description" content="Simple, free online tap counter. Count clicks and taps instantly on any device.">
+  <meta property="og:url" content="https://surendratamang.github.io/tap-counter/">
+  <meta property="og:site_name" content="Tap Counter">
+  <meta property="og:image" content="https://surendratamang.github.io/tap-counter/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tap Counter - Free Online Click Counter Tool">
+  <meta name="twitter:description" content="Simple, free online tap counter. Count clicks and taps instantly on any device.">
+  <meta name="twitter:image" content="https://surendratamang.github.io/tap-counter/og-image.png">
+
+  <!-- Mobile / PWA -->
+  <meta name="theme-color" content="#1a1a2e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Tap Counter">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23e94560'/><text x='50' y='62' font-size='40' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>TAP</text></svg>">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Tap Counter",
+    "description": "Simple, free online tap counter. Count clicks and taps instantly on any device.",
+    "url": "https://surendratamang.github.io/tap-counter/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "Surendra Tamang" }
+  }
+  </script>
   <style>
     * {
       margin: 0;
@@ -72,12 +113,26 @@
     .reset-btn:active {
       background: rgba(255, 255, 255, 0.05);
     }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
   </style>
 </head>
 <body>
-  <div class="count" id="count">0</div>
-  <button class="tap-btn" id="tapBtn">TAP</button>
-  <button class="reset-btn" id="resetBtn">Reset</button>
+  <main>
+    <h1 class="sr-only">Tap Counter - Free Online Click Counter</h1>
+    <div class="count" id="count" role="status" aria-live="polite" aria-label="Current count">0</div>
+    <button class="tap-btn" id="tapBtn" aria-label="Tap to increase counter">TAP</button>
+    <button class="reset-btn" id="resetBtn" aria-label="Reset counter to zero">Reset</button>
+  </main>
 
   <script>
     const countEl = document.getElementById('count');
