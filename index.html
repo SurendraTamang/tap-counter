@@ -54,16 +54,37 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #1a1a2e;
+      background: #0f0f1a;
       color: #fff;
       height: 100dvh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       user-select: none;
       -webkit-user-select: none;
       overflow: hidden;
+    }
+
+    main {
+      background: #1a1a2e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      max-width: 480px;
+      max-height: 800px;
+      border-radius: 0;
+      position: relative;
+    }
+
+    @media (min-width: 600px) {
+      main {
+        border-radius: 24px;
+        height: 85vh;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      }
     }
 
     .count {
@@ -79,18 +100,22 @@
     }
 
     .tap-btn {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       border: none;
       background: #e94560;
       color: #fff;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 600;
       cursor: pointer;
       transition: transform 0.1s ease, box-shadow 0.1s ease;
       box-shadow: 0 8px 30px rgba(233, 69, 96, 0.4);
       -webkit-tap-highlight-color: transparent;
+    }
+
+    .tap-btn:hover {
+      box-shadow: 0 12px 40px rgba(233, 69, 96, 0.5);
     }
 
     .tap-btn:active {
@@ -99,7 +124,7 @@
     }
 
     .reset-btn {
-      position: fixed;
+      position: absolute;
       bottom: 2rem;
       background: none;
       border: 1px solid rgba(255, 255, 255, 0.2);
@@ -109,6 +134,11 @@
       font-size: 0.9rem;
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
+      transition: background 0.15s ease;
+    }
+
+    .reset-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .reset-btn:active {
